@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nexo Digital Ops — Free 7-Minute Loom Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --off-black: #111111;
+    --panel: #161616;
+    --border: #2a2a2a;
+    --muted: #444444;
+    --mid: #888888;
+    --light: #cccccc;
+    --white: #f5f4f0;
+    --accent: #e8f54d;
+    --accent-dim: #b8c33a;
+    --red: #ff4a3d;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  img, video, iframe, svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* ─── NAV ─────────────────────────────────────────── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    color: var(--white);
+  }
+
+  .logo span { color: var(--accent); }
+
+  nav a {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--accent); }
+
+  /* ─── HERO ────────────────────────────────────────── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+
+  .tag::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 7vw, 96px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  h1 em {
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  .subheadline {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--light);
+    line-height: 1.65;
+    max-width: 520px;
+    margin-bottom: 40px;
+  }
+
+  .subheadline strong { color: var(--white); font-weight: 600; }
+
+  .cta-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    padding: 16px 32px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    position: relative;
+  }
+
+  .cta-primary::after {
+    content: '→';
+    margin-left: 10px;
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+
+  .cta-primary:hover { background: var(--accent-dim); transform: translateY(-2px); }
+  .cta-primary:hover::after { transform: translateX(4px); }
+
+  .guarantee {
+    margin-top: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* Hero card */
+  .hero-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 32px;
+  }
+
+  .hero-card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .stat-row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stat-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .stat-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--black);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 16px;
+  }
+
+  .stat-text strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+
+  .stat-text span {
+    font-size: 12px;
+    color: var(--mid);
+  }
+
+  /* ─── BG TEXTURE ─────────────────────────────────── */
+  .bg-lines {
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 59px,
+      var(--border) 59px,
+      var(--border) 60px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 59px,
+      var(--border) 59px,
+      var(--border) 60px
+    );
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  .bg-glow {
+    position: absolute;
+    top: -200px;
+    left: -100px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(232,245,77,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ─── SECTION BASE ────────────────────────────────── */
+  section {
+    padding: 90px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-wrap {
+    border-top: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 60px);
+    letter-spacing: 0.03em;
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  h2 em { color: var(--accent); font-style: normal; }
+
+  .section-intro {
+    font-size: 17px;
+    color: var(--light);
+    max-width: 580px;
+    margin-bottom: 56px;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* ─── WHAT I DO ───────────────────────────────────── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .service-card {
+    background: var(--panel);
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s;
+  }
+
+  .service-card:hover { background: #1e1e1e; }
+
+  .service-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: -8px;
+    transition: color 0.2s;
+  }
+
+  .service-card:hover .service-num { color: var(--muted); }
+
+  .service-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+    margin-top: 12px;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+
+  .service-tools {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tool-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--mid);
+    background: var(--black);
+    border: 1px solid var(--border);
+    padding: 3px 8px;
+  }
+
+  /* ─── 7 DAYS DELIVERABLES ─────────────────────────── */
+  #deliverables { background: var(--off-black); }
+
+  .deliver-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .deliver-item {
+    background: var(--panel);
+    padding: 32px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+
+  .deliver-item:hover { background: #1c1c1c; }
+
+  .check {
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .deliver-text strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 5px;
+  }
+
+  .deliver-text p {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
+  /* ─── 30-DAY PLAN ─────────────────────────────────── */
+  .plan-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  .plan-step {
+    padding: 40px 36px;
+    border: 1px solid var(--border);
+    margin-right: -1px;
+    position: relative;
+  }
+
+  .step-week {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: var(--off-black);
+    line-height: 1;
+    position: absolute;
+    bottom: 16px;
+    right: 20px;
+  }
+
+  .step-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .step-desc {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── WHY IT WORKS ────────────────────────────────── */
+  #why { background: var(--off-black); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .why-card {
+    padding: 32px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    position: relative;
+  }
+
+  .why-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .why-card:hover::before { transform: scaleX(1); }
+
+  .why-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .why-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .why-desc {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+
+  /* ─── CONTACT ─────────────────────────────────────── */
+  #contact {
+    text-align: center;
+    padding: 100px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-glow {
+    position: absolute;
+    bottom: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(232,245,77,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  #contact .section-label { text-align: center; }
+
+  #contact h2 {
+    font-size: clamp(44px, 6vw, 80px);
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+
+  .contact-sub {
+    font-size: 17px;
+    color: var(--light);
+    max-width: 480px;
+    margin: 0 auto 40px;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .email-link {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 18px;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+    margin-bottom: 40px;
+    transition: opacity 0.2s;
+  }
+
+  .email-link:hover { opacity: 0.7; }
+
+  .no-pitch {
+    display: inline-block;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 16px 28px;
+    font-size: 13px;
+    color: var(--mid);
+    font-style: italic;
+    max-width: 420px;
+    line-height: 1.6;
+  }
+
+  .no-pitch strong { color: var(--light); font-style: normal; }
+
+  /* ─── FOOTER ─────────────────────────────────────── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  footer p {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  /* ─── DIVIDER ─────────────────────────────────────── */
+  .full-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ─── ANIMATIONS ─────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-grid > * {
+    animation: fadeUp 0.7s ease both;
+  }
+
+  .hero-grid > *:nth-child(2) { animation-delay: 0.12s; }
+
+  /* ─── RESPONSIVE ─────────────────────────────────── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 20px; }
+    nav a { display: inline-block; font-size: 10px; }
+
+    #hero { padding: 80px 20px 64px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-card { display: none; }
+
+    section { padding: 56px 20px; }
+
+    .services-grid { grid-template-columns: 1fr; }
+    .deliver-grid  { grid-template-columns: 1fr; }
+    .plan-steps    { grid-template-columns: 1fr; }
+    .plan-step     { margin-right: 0; margin-bottom: -1px; }
+    .why-grid      { grid-template-columns: 1fr; }
+
+    footer { flex-direction: column; gap: 10px; text-align: center; padding: 24px 20px; }
+
+    #contact { padding: 64px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Nexo<span>.</span>Digital<span>Ops</span></div>
+  <a href="#contact">Request Free Audit →</a>
+</nav>
+
+<!-- HERO -->
+<div style="position:relative;">
+  <div class="bg-lines"></div>
+  <div class="bg-glow"></div>
+  <section id="hero" style="position:relative; z-index:1; max-width:100%; padding-top:120px; padding-bottom:90px;">
+    <div class="hero-grid" style="max-width:1100px; margin:0 auto;">
+      <div>
+        <div class="tag">Free for Home Service Businesses</div>
+        <h1>Your Ads Are Running.<br><em>Let's Make Sure</em><br>They Produce Calls.</h1>
+        <p class="subheadline">
+          I'll record a <strong>free 7‑minute Loom video</strong> showing where your Google Ads funnel is leaking—tracking, keywords, and landing page conversion. <strong>No account access needed</strong> for the first Loom.
+        </p>
+        <a href="#contact" class="cta-primary">Request the 7‑Minute Loom Audit</a>
+        <p class="guarantee">One email. One Loom. No pressure. If it's not useful, no follow‑ups.</p>
+      </div>
+
+      <div class="hero-card">
+        <p class="hero-card-label">// What I look for</p>
+        <div class="stat-row">
+          <div class="stat-item">
+            <div class="stat-icon">📍</div>
+            <div class="stat-text">
+              <strong>Conversion Tracking Gaps</strong>
+              <span>Most accounts aren't tracking real leads—just pageviews</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">📞</div>
+            <div class="stat-text">
+              <strong>Missed Call Conversions</strong>
+              <span>Phone calls are your best leads. Most accounts miss them entirely</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">🎯</div>
+            <div class="stat-text">
+              <strong>Wasted Ad Spend</strong>
+              <span>Wrong match types + no negative keywords = budget drain</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">📄</div>
+            <div class="stat-text">
+              <strong>Landing Page Leaks</strong>
+              <span>Traffic hits the page and bounces. Fixable in days.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="full-divider"></div>
+
+<!-- WHAT I DO -->
+<div class="section-wrap">
+<section id="services">
+  <div class="section-label">// What I Do</div>
+  <h2>Precision Work.<br><em>No Generalist Stuff.</em></h2>
+  <p class="section-intro">I work exclusively with home service businesses running Google Ads. HVAC, plumbing, roofing. Three things, done right.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-title">Google Ads Management</div>
+      <p class="service-desc">Campaign structure built for intent—service keywords, location targeting, and bid strategies that actually match how people search for contractors in your metro area.</p>
+      <div class="service-tools">
+        <span class="tool-tag">Google Ads</span>
+        <span class="tool-tag">Search Campaigns</span>
+        <span class="tool-tag">Negative Keywords</span>
+        <span class="tool-tag">LSA</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-title">GA4 + GTM Tracking Setup</div>
+      <p class="service-desc">If you can't trust your data, you can't make good decisions. I build clean, reliable conversion tracking—calls, form fills, and booking confirmations—so you know what's actually working.</p>
+      <div class="service-tools">
+        <span class="tool-tag">GA4</span>
+        <span class="tool-tag">Google Tag Manager</span>
+        <span class="tool-tag">CallRail</span>
+        <span class="tool-tag">Looker Studio</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-title">Landing Page CRO</div>
+      <p class="service-desc">Getting clicks is only half the battle. I review and optimize landing pages for speed, trust signals, and conversion—so more of the traffic you're paying for turns into booked jobs.</p>
+      <div class="service-tools">
+        <span class="tool-tag">Unbounce</span>
+        <span class="tool-tag">WordPress</span>
+        <span class="tool-tag">Heatmaps</span>
+        <span class="tool-tag">A/B Testing</span>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="full-divider"></div>
+
+<!-- 7-DAY DELIVERABLES -->
+<div class="section-wrap" style="background: var(--off-black);">
+<section id="deliverables" style="background:transparent;">
+  <div class="section-label">// What You Get in 7 Days</div>
+  <h2>The Free Audit.<br><em>What's Inside.</em></h2>
+  <p class="section-intro">No access needed for the first Loom. You send your business name + city + services. Within 7 days you get a Loom video with the highest‑impact fixes. If you want a deeper audit after watching it, I'll request read‑only access.</p>
+
+  <div class="deliver-grid">
+    <div class="deliver-item">
+      <div class="check">✓</div>
+      <div class="deliver-text">
+        <strong>Conversion Tracking Audit</strong>
+        <p>I check if your form fills and calls are firing correctly in GA4 and Google Ads. Most accounts have duplicate or broken events—and they don't know it.</p>
+      </div>
+    </div>
+    <div class="deliver-item">
+      <div class="check">✓</div>
+      <div class="deliver-text">
+        <strong>Call Tracking Plan</strong>
+        <p>A clear recommendation on how to track inbound calls from ads—what tools to use, how to set them up, and where to plug them into your campaigns.</p>
+      </div>
+    </div>
+    <div class="deliver-item">
+      <div class="check">✓</div>
+      <div class="deliver-text">
+        <strong>Campaign Structure Review</strong>
+        <p>I flag the exact ad groups, match types, and bidding strategies that are wasting your budget—and tell you what to change first.</p>
+      </div>
+    </div>
+    <div class="deliver-item">
+      <div class="check">✓</div>
+      <div class="deliver-text">
+        <strong>Landing Page Quick Wins</strong>
+        <p>2–3 specific changes you can make this week to improve conversion rate. No redesign needed—small fixes with real impact on your cost per lead.</p>
+      </div>
+    </div>
+    <div class="deliver-item">
+      <div class="check">✓</div>
+      <div class="deliver-text">
+        <strong>Keyword Waste Report</strong>
+        <p>Which search terms are eating your budget without converting. I pull the actual data and show you what to exclude right away.</p>
+      </div>
+    </div>
+    <div class="deliver-item">
+      <div class="check">✓</div>
+      <div class="deliver-text">
+        <strong>30-Day Action Plan</strong>
+        <p>A simple, prioritized list of what to fix in the next 30 days—not a 40-page deck, just a clear next step for each problem I find.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="full-divider"></div>
+
+<!-- 30-DAY PLAN -->
+<div class="section-wrap">
+<section id="plan">
+  <div class="section-label">// The 30-Day Plan</div>
+  <h2>Three Steps.<br><em>One Month.</em></h2>
+  <p class="section-intro">After the audit, if you want to work together, here's how the first 30 days run. Simple, sequential, no overlap.</p>
+
+  <div class="plan-steps">
+    <div class="plan-step">
+      <div class="step-week">Week 1–2</div>
+      <div class="step-title">Fix the Foundation</div>
+      <p class="step-desc">Clean up conversion tracking. Install call tracking. Remove wasted spend from bad keywords and match types. You stop losing money on things that were never going to convert.</p>
+      <div class="step-num">01</div>
+    </div>
+    <div class="plan-step">
+      <div class="step-week">Week 2–3</div>
+      <div class="step-title">Tighten the Targeting</div>
+      <p class="step-desc">Rebuild or restructure campaigns by service type and intent. Separate "emergency" searches from "planning" searches. Adjust bids to favor the traffic most likely to book.</p>
+      <div class="step-num">02</div>
+    </div>
+    <div class="plan-step">
+      <div class="step-week">Week 3–4</div>
+      <div class="step-title">Improve What Converts</div>
+      <p class="step-desc">Apply landing page fixes based on real data. Test headlines and CTAs. By end of month, you have cleaner data, better targeting, and a lower cost per booked call.</p>
+      <div class="step-num">03</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="full-divider"></div>
+
+<!-- WHY IT WORKS -->
+<div class="section-wrap" style="background: var(--off-black);">
+<section id="why" style="background:transparent;">
+  <div class="section-label">// Why It Works</div>
+  <h2>Process Over<br><em>Promises.</em></h2>
+  <p class="section-intro">I don't claim to have a secret formula. This works because it's built on measurement, not guesswork.</p>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">📊</div>
+      <div class="why-title">Measurement First</div>
+      <p class="why-desc">Every decision comes from data you can see. Before changing anything, I verify that your tracking is accurate—because optimizing against bad data just moves the problem around. I use GA4, GTM, and CallRail to build a source of truth.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🎯</div>
+      <div class="why-title">Intent Segmentation</div>
+      <p class="why-desc">A homeowner searching "emergency AC repair tonight" and one searching "how much does AC installation cost" have completely different intent. I build campaigns that separate them—so your budget goes toward people who are ready to call, not just browse.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">⚙️</div>
+      <div class="why-title">Conversion Rate Optimization</div>
+      <p class="why-desc">Lower cost per lead doesn't always mean lower spend—it often means more of your existing traffic converts. I look at page speed, trust signals, form friction, and headline clarity before recommending anything that costs more money.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="full-divider"></div>
+
+<div class="section-wrap">
+<section id="about">
+  <div class="section-label">// About</div>
+  <h2>Operator-Led.<br><em>Hands-On.</em></h2>
+  <p class="section-intro">
+    I'm Lauriano. I help home service businesses (HVAC, plumbing, roofing) get more booked calls from Google Ads by fixing tracking, campaign intent, and landing page leaks.
+    No fluff—just the work that moves cost per lead.
+  </p>
+</section>
+</div>
+
+<div class="full-divider"></div>
+
+<!-- CONTACT -->
+<section id="contact" style="max-width:100%; padding:100px 40px; position:relative; overflow:hidden;">
+  <div class="contact-glow"></div>
+  <div style="position:relative; z-index:1;">
+    <div class="section-label" style="justify-content:center; display:flex;">// Request the Free Audit</div>
+    <h2 style="text-align:center;">Ready to See<br><em>Where It's Leaking?</em></h2>
+    <p class="contact-sub">Email me with: (1) business name, (2) city/state, (3) services (HVAC/plumbing/roofing), and (4) whether you're running Google Ads or LSAs. I'll reply within 24 hours confirming delivery time for the Loom.</p>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:24px;">
+      <a href="/cdn-cgi/l/email-protection#4129242d2d2e012f24392e2528262835202d2e31326f222e2c" class="email-link"><span class="__cf_email__" data-cfemail="7018151c1c1f301e15081f1419171904111c1f00035e131f1d">[email&#160;protected]</span></a>
+      <a href="/cdn-cgi/l/email-protection#a8c0cdc4c4c7e8c6cdd0c7ccc1cfc1dcc9c4c7d8db86cbc7c5" class="cta-primary" style="font-size:16px; padding:18px 36px;">Email Me for the 7‑Minute Loom Audit</a>
+      <div style="max-width:720px; margin:10px auto 0; text-align:left; border:1px solid var(--border); background:var(--panel); padding:22px 22px;">
+        <div style="font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">
+          // FAQ
+        </div>
+        <p style="margin:0 0 10px; color:var(--light); font-size:13px; line-height:1.6;">
+          <strong>Do you need access to my Ads account?</strong><br>
+          Not for the first Loom. If you want a deeper audit after watching it, I'll request read‑only access.
+        </p>
+        <p style="margin:0 0 10px; color:var(--light); font-size:13px; line-height:1.6;">
+          <strong>What do you need from me?</strong><br>
+          Business name, city/state, services, and whether you run Google Ads/LSAs.
+        </p>
+        <p style="margin:0; color:var(--light); font-size:13px; line-height:1.6;">
+          <strong>Will you pitch me?</strong><br>
+          No. One Loom. If it's not useful, no follow‑ups.
+        </p>
+      </div>
+      <div class="no-pitch">
+        <strong>Zero pressure, seriously.</strong> If you watch the Loom and it's not useful to you, ignore it. I won't follow up asking why you didn't respond.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top:1px solid var(--border); padding:28px 40px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px;">
+  <div class="footer-logo">Nexo Digital Ops</div>
+  <p style="font-family:'DM Mono',monospace; font-size:11px; color:var(--muted); letter-spacing:0.06em;">
+    Google Ads &middot; GA4 &middot; GTM &middot; CRO &mdash; Home Services
+  </p>
+  <p style="font-family:'DM Mono',monospace; font-size:11px; color:var(--muted); letter-spacing:0.06em;">
+    <a href="/cdn-cgi/l/email-protec
