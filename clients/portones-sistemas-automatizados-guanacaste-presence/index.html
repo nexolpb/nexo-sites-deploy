@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portones y Sistemas Automatizados Guanacaste | Premium (ES/EN)</title>
+  <title>Portones y Sistemas Automatizados Guanacaste | Presence (ES/EN)</title>
   <meta name="description" content="Portones residenciales para condominios en Tamarindo y alrededores: automatización, fabricación, mantenimiento y repuestos. Cotización rápida por WhatsApp." />
-  <link rel="icon" href="./images/513481770_24094367676869972_523350008619732348_n.jpg" />
+  <link rel="icon" href="./images/logo.jpg" />
 
   <meta property="og:title" content="Portones y Sistemas Automatizados Guanacaste" />
   <meta property="og:description" content="Automatización y fabricación de portones residenciales (condominios). ES/EN. Cotización rápida por WhatsApp." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="./images/513481770_24094367676869972_523350008619732348_n.jpg" />
+  <meta property="og:image" content="./images/logo.jpg" />
 
   <style>
     :root{
@@ -34,7 +34,7 @@
     header{position:sticky;top:0;z-index:30;background:rgba(7,17,31,.75);backdrop-filter: blur(12px);border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
     .logo{display:flex;align-items:center;gap:12px;min-width:0}
-    .mark{width:40px;height:40px;border-radius:14px;background:linear-gradient(135deg, rgba(34,197,94,.95), rgba(14,165,233,.75));box-shadow: 0 12px 42px rgba(14,165,233,.18)}
+    .mark{width:40px;height:40px;border-radius:14px;background:#07111f url('./images/logo.jpg') center/cover no-repeat;box-shadow: 0 12px 42px rgba(14,165,233,.18); border:1px solid rgba(255,255,255,.12)}
     .brand{display:flex;flex-direction:column;min-width:0}
     .brand strong{font-size:14px;letter-spacing:.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .brand span{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -52,7 +52,10 @@
     .lead{margin:0 0 16px;color:var(--muted);line-height:1.6}
 
     .hero-panel{border:1px solid var(--line);background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
-    .hero-img{height:270px;background:#07111f url('./images/497546300_9962103400522970_8345042353478602057_n.jpg') center/cover no-repeat;position:relative}
+    .hero-img{height:270px;background:
+      radial-gradient(700px 240px at 60% 30%, rgba(14,165,233,.20), transparent 60%),
+      #07111f url('./images/logo.jpg') center/contain no-repeat;
+      position:relative}
     .hero-img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 30%, rgba(7,17,31,.90) 100%)}
     .hero-body{padding:16px}
 
@@ -104,6 +107,12 @@
       .split{grid-template-columns:1fr}
       .h1{font-size:34px}
       .form{grid-template-columns:1fr}
+
+      /* Mobile: avoid cutting off business name in sticky header */
+      .nav{align-items:flex-start}
+      .logo{align-items:flex-start}
+      .brand strong{white-space:normal; line-height:1.15}
+      .brand span{white-space:normal}
     }
   </style>
 </head>
@@ -269,6 +278,20 @@
         </div>
       </section>
 
+      <section id="ribberth" aria-label="Galería RIBBERTH">
+        <div class="section-title">
+          <div>
+            <h2 id="t_rib_gallery">Galería: RIBBERTH</h2>
+            <p class="sub" id="t_rib_gallerysub">Fotos específicas del portón RIBBERTH.</p>
+          </div>
+        </div>
+        <div class="gallery" style="grid-template-columns:repeat(3,1fr)">
+          <div class="ph" style="background-image:url('./ribberth/RIBBERTH.jpg')"></div>
+          <div class="ph" style="background-image:url('./ribberth/RIBBERTH1.jpg')"></div>
+          <div class="ph" style="background-image:url('./ribberth/RIBBERTH2.jpg')"></div>
+        </div>
+      </section>
+
       <section id="galeria" aria-label="Galería">
         <div class="section-title">
           <div>
@@ -424,6 +447,8 @@
         rib:'Portón Corredizo Insulado RIBBERTH',
         ribp:'Inst. total, materiales y mano de obra. Motor turbo 624 con respaldo de baterías, 2 botoneras de acceso + accesorios.',
         ribfine:'Precio referencial: ₡2.250.000. Puede variar según medidas, requerimientos y ubicación.',
+        ribGallery:'Galería: RIBBERTH',
+        ribGallerySub:'Fotos específicas del portón RIBBERTH.',
         quote:'Pedir cotización', viewphotos:'Ver fotos',
         why:'¿Por qué elegirnos?',
         why1:'Enfoque residencial y condominios', why2:'Venta de repuestos + mantenimiento', why3:'Trabajo por visita/cotización (sin compromiso)', why4:'Garantía según el trabajo/equipo instalado',
@@ -463,6 +488,8 @@
         rib:'Insulated Sliding Gate (RIBBERTH)',
         ribp:'Turnkey installation (materials + labor). Turbo 624 motor with battery backup, 2 access push-buttons + accessories.',
         ribfine:'Reference price: ₡2,250,000. Final price may vary by size, requirements and location.',
+        ribGallery:'Gallery: RIBBERTH',
+        ribGallerySub:'Specific photos of the RIBBERTH gate.',
         quote:'Request a quote', viewphotos:'See photos',
         why:'Why choose us?',
         why1:'Residential and condo focus', why2:'Spare parts + maintenance', why3:'No-obligation visit/quote', why4:'Warranty depends on installed work/equipment',
@@ -494,6 +521,7 @@
       t_areas:'areas', t_areassub:'areassub', t_areas_note:'areasNote',
       t_project:'project', t_projectsub:'projectsub',
       t_rib:'rib', t_ribp:'ribp', t_ribfine:'ribfine', t_quote:'quote', t_viewphotos:'viewphotos',
+      t_rib_gallery:'ribGallery', t_rib_gallerysub:'ribGallerySub',
       t_why:'why', t_why1:'why1', t_why2:'why2', t_why3:'why3', t_why4:'why4', t_why_note:'whyNote',
       t_gallery:'gallery', t_gallerysub:'gallerysub',
       t_form:'form', t_formsub:'formsub', t_name:'name', t_zone:'zone', t_type:'type', t_urgency:'urgency', t_details:'details',

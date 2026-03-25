@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portones y Sistemas Automatizados Guanacaste | Tamarindo y alrededores</title>
   <meta name="description" content="Instalación y automatización de portones residenciales en Tamarindo, Villarreal, Flamingo, Pinilla y Santa Cruz. Cotización rápida por WhatsApp." />
-  <link rel="icon" href="./images/486486144_9633678976698749_2994404747209803559_n.jpg" />
+  <link rel="icon" href="./images/logo.jpg" />
 
   <meta property="og:title" content="Portones y Sistemas Automatizados Guanacaste" />
   <meta property="og:description" content="Automatización, fabricación y mantenimiento de portones residenciales. Atención en Tamarindo y zonas cercanas. Cotización rápida por WhatsApp." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="./images/486486144_9633678976698749_2994404747209803559_n.jpg" />
+  <meta property="og:image" content="./images/logo.jpg" />
 
   <style>
     :root{
@@ -31,7 +31,7 @@
     header{position:sticky;top:0;z-index:20;background:rgba(11,18,32,.72);backdrop-filter: blur(10px);border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
     .logo{display:flex;align-items:center;gap:12px;min-width:0}
-    .badge{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg, rgba(34,197,94,.95), rgba(16,185,129,.65));box-shadow: 0 8px 30px rgba(34,197,94,.25)}
+    .badge{width:38px;height:38px;border-radius:12px;background:#0b1220 url('./images/logo.jpg') center/cover no-repeat;box-shadow: 0 8px 30px rgba(34,197,94,.25); border:1px solid rgba(255,255,255,.12)}
     .brand{display:flex;flex-direction:column;min-width:0}
     .brand strong{font-size:14px;letter-spacing:.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .brand span{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -54,7 +54,10 @@
     .kpi small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
 
     .hero-card{border:1px solid var(--line);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
-    .hero-img{height:260px;background:#0b1220 url('./images/495610765_9962103257189651_5807293955031726967_n.jpg') center/cover no-repeat;position:relative}
+    .hero-img{height:260px;background:
+      radial-gradient(600px 220px at 60% 30%, rgba(34,197,94,.20), transparent 60%),
+      #0b1220 url('./images/logo.jpg') center/contain no-repeat;
+      position:relative}
     .hero-img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 35%, rgba(11,18,32,.86) 100%)}
     .hero-card-body{padding:16px}
     .contact-row{display:grid;grid-template-columns:1fr;gap:10px}
@@ -98,6 +101,12 @@
       .gallery{grid-template-columns:repeat(2,1fr)}
       .faq{grid-template-columns:1fr}
       .h1{font-size:34px}
+
+      /* Mobile: avoid cutting off business name in sticky header */
+      .nav{align-items:flex-start}
+      .logo{align-items:flex-start}
+      .brand strong{white-space:normal; line-height:1.15}
+      .brand span{white-space:normal}
     }
   </style>
 </head>
@@ -264,6 +273,20 @@
         </div>
       </section>
 
+      <section id="ribberth" aria-label="Galería RIBBERTH">
+        <div class="section-title">
+          <div>
+            <h2 id="t_rib_gallery">Galería: RIBBERTH</h2>
+            <p class="sub" id="t_rib_gallerysub">Fotos específicas del portón RIBBERTH.</p>
+          </div>
+        </div>
+        <div class="gallery" style="grid-template-columns:repeat(3,1fr)">
+          <div class="ph" style="background-image:url('./ribberth/RIBBERTH.jpg')"></div>
+          <div class="ph" style="background-image:url('./ribberth/RIBBERTH1.jpg')"></div>
+          <div class="ph" style="background-image:url('./ribberth/RIBBERTH2.jpg')"></div>
+        </div>
+      </section>
+
       <section id="galeria" aria-label="Galería">
         <div class="section-title">
           <div>
@@ -362,6 +385,8 @@
         rib:'Portón Corredizo Insulado RIBBERTH',
         ribp:'Instalación total (materiales y mano de obra). Motor turbo 624 con respaldo de baterías, 2 botoneras de acceso + accesorios.',
         ribfine:'Precio referencial: ₡2.250.000. Puede variar según medidas, requerimientos y ubicación.',
+        ribGallery:'Galería: RIBBERTH',
+        ribGallerySub:'Fotos específicas del portón RIBBERTH.',
         quote:'Pedir cotización', viewphotos:'Ver fotos',
         owner:'Atención directa', ownerp:'Dacio Ramírez y equipo. Trabajo enfocado en accesos residenciales y condominios.',
         ownerl1:'Cotización sin compromiso', ownerl2:'Mantenimiento y repuestos', ownerl3:'Garantía según el trabajo/equipo instalado',
@@ -399,6 +424,8 @@
         rib:'Insulated Sliding Gate (RIBBERTH)',
         ribp:'Turnkey installation (materials + labor). Turbo 624 motor with battery backup, 2 access push-buttons + accessories.',
         ribfine:'Reference price: ₡2,250,000. Final price may vary by size, requirements and location.',
+        ribGallery:'Gallery: RIBBERTH',
+        ribGallerySub:'Specific photos of the RIBBERTH gate.',
         quote:'Request a quote', viewphotos:'See photos',
         owner:'Direct attention', ownerp:'Dacio Ramírez and team. Focused on residential access and condominiums.',
         ownerl1:'No-obligation quotes', ownerl2:'Maintenance & spare parts', ownerl3:'Warranty depends on installed work/equipment',
@@ -426,6 +453,7 @@
       t_areas:'areas', t_areassub:'areassub', t_areas_note:'areasNote',
       t_example:'example', t_examplesub:'examplesub',
       t_rib:'rib', t_ribp:'ribp', t_ribfine:'ribfine', t_quote:'quote', t_viewphotos:'viewphotos',
+      t_rib_gallery:'ribGallery', t_rib_gallerysub:'ribGallerySub',
       t_owner:'owner', t_ownerp:'ownerp', t_ownerl1:'ownerl1', t_ownerl2:'ownerl2', t_ownerl3:'ownerl3',
       t_gallery:'gallery', t_gallerysub:'gallerysub',
       t_faq:'faq', t_faqsub:'faqsub',
