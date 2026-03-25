@@ -66,7 +66,7 @@
     .contact b{font-size:14px}
     .contact a{font-weight:800;text-decoration:none}
 
-    section{padding:26px 0}
+    section{padding:26px 0; scroll-margin-top: 92px}
     .section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:12px}
     h2{font-size:22px;margin:0;letter-spacing:-.2px}
     .sub{color:var(--muted);font-size:13px;margin:0}
@@ -102,11 +102,23 @@
       .faq{grid-template-columns:1fr}
       .h1{font-size:34px}
 
-      /* Mobile: avoid cutting off business name in sticky header */
-      .nav{align-items:flex-start}
+      /* Mobile header layout: brand on top, actions below (horizontal) */
+      .nav{flex-direction:column; align-items:stretch; gap:10px}
       .logo{align-items:flex-start}
       .brand strong{white-space:normal; line-height:1.15}
       .brand span{white-space:normal}
+      .nav-actions{width:100%; justify-content:space-between}
+      .nav-actions .pill{flex:0 0 auto}
+      .nav-actions a{flex:1 1 auto}
+
+      /* Mobile: prevent contact rows from cutting off content/buttons */
+      .contact{flex-direction:column; align-items:flex-start}
+      .contact a{align-self:stretch; text-align:center; padding:10px 12px; border-radius:12px; background:rgba(255,255,255,.06); border:1px solid var(--line)}
+
+      /* Mobile: center the 3 quick value props under the primary CTA */
+      .kpi-row{justify-content:center}
+      .kpi{flex:1 1 160px; justify-content:center; text-align:center}
+      .kpi > div:first-child{margin-top:1px}
     }
   </style>
 </head>
@@ -118,7 +130,7 @@
           <div class="badge" aria-hidden="true"></div>
           <div class="brand">
             <strong id="t_brand">Portones y Sistemas Automatizados Guanacaste</strong>
-            <span id="t_brand_sub">Tamarindo • Villarreal • Flamingo • Pinilla • Santa Cruz</span>
+            <span id="t_brand_sub">Residencial y condominios • Guanacaste (ES/EN)</span>
           </div>
         </div>
         <div class="nav-actions">
@@ -138,7 +150,7 @@
             <h1 class="h1" id="t_h1">Automatización y fabricación de portones residenciales</h1>
             <p class="lead" id="t_lead">¿Portón dañado o quiere automatizar el acceso a su casa o condominio? Escríbanos por WhatsApp y le cotizamos sin compromiso.</p>
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <a class="btn btn-primary" id="waBtn2" href="https://wa.me/50684644941?text=Hola%2C%20quisiera%20cotizar%20un%20port%C3%B3n%20o%20automatizaci%C3%B3n.%20Estoy%20en%20%5Bzona%5D.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noreferrer">Cotizar por WhatsApp</a>
+              <a class="btn btn-primary" id="waBtn2" href="https://wa.me/50684644941?text=Hola%2C%20quisiera%20cotizar%20un%20port%C3%B3n%20o%20automatizaci%C3%B3n.%20Estoy%20en%20%5Bzona%5D.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noreferrer"><span id="t_primaryCta">Cotizar por WhatsApp</span></a>
               <a class="btn" id="t_servicesBtn" href="#servicios">Ver servicios</a>
             </div>
 
@@ -361,10 +373,11 @@
   <script>
     const i18n = {
       es: {
-        brandSub: 'Tamarindo • Villarreal • Flamingo • Pinilla • Santa Cruz',
+        brandSub: 'Residencial y condominios • Guanacaste (ES/EN)',
         h1: 'Automatización y fabricación de portones residenciales',
         lead: '¿Portón dañado o quiere automatizar el acceso a su casa o condominio? Escríbanos por WhatsApp y le cotizamos sin compromiso.',
         servicesBtn: 'Ver servicios',
+        primaryCta: 'Cotizar por WhatsApp',
         k1:'Automatización', k1s:'Motores, controles y accesorios',
         k2:'Mantenimiento', k2s:'Revisión y reparación',
         k3:'Fabricación', k3s:'Portones a la medida',
@@ -400,10 +413,11 @@
         call:'Llamar', whats:'WhatsApp', write:'Escribir'
       },
       en: {
-        brandSub: 'Tamarindo • Villarreal • Flamingo • Pinilla • Santa Cruz',
+        brandSub: 'Residential & condos • Guanacaste (ES/EN)',
         h1: 'Residential gate automation & fabrication',
         lead: 'Gate not working or want to automate access to your home or condo? Message us on WhatsApp for a fast, no-obligation quote.',
         servicesBtn: 'See services',
+        primaryCta: 'Get a WhatsApp quote',
         k1:'Automation', k1s:'Motors, remotes & accessories',
         k2:'Maintenance', k2s:'Inspection & repairs',
         k3:'Fabrication', k3s:'Custom-made gates',
@@ -442,7 +456,7 @@
 
     let lang = 'es';
     const ids = {
-      t_brand_sub:'brandSub', t_h1:'h1', t_lead:'lead', t_servicesBtn:'servicesBtn',
+      t_brand_sub:'brandSub', t_h1:'h1', t_lead:'lead', t_servicesBtn:'servicesBtn', t_primaryCta:'primaryCta',
       t_k1:'k1', t_k1s:'k1s', t_k2:'k2', t_k2s:'k2s', t_k3:'k3', t_k3s:'k3s',
       t_phone:'phone', t_hours:'hours', t_hours_val:'hoursVal', t_note:'note',
       t_s1:'s1', t_s1sub:'s1sub',
@@ -461,6 +475,8 @@
       t_cta:'cta', t_ctasub:'ctasub', t_call:'call', t_whats:'whats', t_write:'write'
     };
 
+    const WA_BASE = 'https://wa.me/50684644941?text=';
+
     function apply(){
       const d = i18n[lang];
       for (const [id,key] of Object.entries(ids)){
@@ -469,6 +485,18 @@
       }
       document.documentElement.lang = lang;
       document.getElementById('callBtn').textContent = i18n[lang].call;
+
+      // Update WhatsApp CTAs so the prefilled message matches the selected language.
+      const msg = (lang === 'es')
+        ? 'Hola, quisiera cotizar un portón o automatización. Estoy en [zona]. ¿Me pueden ayudar?'
+        : 'Hi, I’d like a quote for a gate or automation. I’m in [area]. Can you help me?';
+
+      const href = WA_BASE + encodeURIComponent(msg);
+      const idsToUpdate = ['waBtn','waBtn2','waBtn2','t_write','t_whats'];
+      for (const id of idsToUpdate){
+        const a = document.getElementById(id);
+        if (a && a.tagName === 'A') a.href = href;
+      }
     }
 
     document.getElementById('langBtn').addEventListener('click', ()=>{
