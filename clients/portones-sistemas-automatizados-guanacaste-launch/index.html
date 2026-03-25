@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portones y Sistemas Automatizados Guanacaste | Tamarindo y alrededores</title>
+  <meta name="description" content="Instalación y automatización de portones residenciales en Tamarindo, Villarreal, Flamingo, Pinilla y Santa Cruz. Cotización rápida por WhatsApp." />
+  <link rel="icon" href="./images/486486144_9633678976698749_2994404747209803559_n.jpg" />
+
+  <meta property="og:title" content="Portones y Sistemas Automatizados Guanacaste" />
+  <meta property="og:description" content="Automatización, fabricación y mantenimiento de portones residenciales. Atención en Tamarindo y zonas cercanas. Cotización rápida por WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./images/486486144_9633678976698749_2994404747209803559_n.jpg" />
+
+  <style>
+    :root{
+      --bg:#0b1220; --panel:#0f1a2e; --card:#101f38; --text:#eaf0ff; --muted:#b9c5e6;
+      --brand:#22c55e; --brand2:#16a34a; --line:rgba(255,255,255,.10);
+      --shadow: 0 16px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";background:
+      radial-gradient(900px 500px at 18% 10%, rgba(34,197,94,.18), transparent 65%),
+      radial-gradient(900px 500px at 85% 0%, rgba(59,130,246,.14), transparent 60%),
+      var(--bg);
+      color:var(--text);
+    }
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:0 18px}
+    header{position:sticky;top:0;z-index:20;background:rgba(11,18,32,.72);backdrop-filter: blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
+    .logo{display:flex;align-items:center;gap:12px;min-width:0}
+    .badge{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg, rgba(34,197,94,.95), rgba(16,185,129,.65));box-shadow: 0 8px 30px rgba(34,197,94,.25)}
+    .brand{display:flex;flex-direction:column;min-width:0}
+    .brand strong{font-size:14px;letter-spacing:.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .brand span{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .nav-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:11px 14px;border-radius:14px;border:1px solid var(--line);
+      background:rgba(255,255,255,.06);text-decoration:none;font-weight:700;line-height:1;box-shadow:none}
+    .btn:hover{transform: translateY(-1px)}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand2));border:0;color:#08121f}
+    .btn-ghost{background:transparent}
+    .pill{padding:9px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);font-weight:700;font-size:13px;color:var(--text);cursor:pointer}
+
+    .hero{padding:44px 0 26px}
+    .hero-grid{display:grid;grid-template-columns: 1.2fr .8fr;gap:22px;align-items:stretch}
+    .h1{font-size:40px;line-height:1.05;margin:0 0 10px;letter-spacing:-.6px}
+    .lead{font-size:16px;line-height:1.6;color:var(--muted);margin:0 0 18px}
+    .kpi-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .kpi{display:flex;gap:10px;align-items:flex-start;padding:12px 12px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid var(--line)}
+    .kpi b{display:block;font-size:13px}
+    .kpi small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+
+    .hero-card{border:1px solid var(--line);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .hero-img{height:260px;background:#0b1220 url('./images/495610765_9962103257189651_5807293955031726967_n.jpg') center/cover no-repeat;position:relative}
+    .hero-img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 35%, rgba(11,18,32,.86) 100%)}
+    .hero-card-body{padding:16px}
+    .contact-row{display:grid;grid-template-columns:1fr;gap:10px}
+    .contact{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 12px;border-radius:16px;background:rgba(0,0,0,.18);border:1px solid var(--line)}
+    .contact span{color:var(--muted);font-size:12px}
+    .contact b{font-size:14px}
+    .contact a{font-weight:800;text-decoration:none}
+
+    section{padding:26px 0}
+    .section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:12px}
+    h2{font-size:22px;margin:0;letter-spacing:-.2px}
+    .sub{color:var(--muted);font-size:13px;margin:0}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .card{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+    .card h3{margin:0 0 6px;font-size:15px}
+    .card p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+    ul{margin:10px 0 0;padding-left:18px;color:var(--muted);line-height:1.7;font-size:13px}
+
+    .areas{display:flex;flex-wrap:wrap;gap:10px}
+    .tag{border:1px solid var(--line);background:rgba(255,255,255,.04);padding:9px 12px;border-radius:999px;color:var(--text);font-weight:700;font-size:13px}
+
+    .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+    .ph{aspect-ratio: 1 / 1;border-radius:16px;border:1px solid var(--line);background:#0b1220 center/cover no-repeat;overflow:hidden}
+
+    .faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    details{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:var(--radius);padding:12px}
+    summary{cursor:pointer;font-weight:800}
+    details p{margin:10px 0 0;color:var(--muted);font-size:13px;line-height:1.6}
+
+    .cta{background:linear-gradient(135deg, rgba(34,197,94,.18), rgba(59,130,246,.12));border:1px solid var(--line);border-radius:22px;padding:18px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .cta h3{margin:0;font-size:18px}
+    .cta p{margin:4px 0 0;color:var(--muted);font-size:13px;line-height:1.5}
+
+    footer{padding:26px 0 34px;border-top:1px solid var(--line);color:var(--muted)}
+    .fine{font-size:12px;line-height:1.6}
+
+    @media (max-width: 920px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .faq{grid-template-columns:1fr}
+      .h1{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="logo">
+          <div class="badge" aria-hidden="true"></div>
+          <div class="brand">
+            <strong id="t_brand">Portones y Sistemas Automatizados Guanacaste</strong>
+            <span id="t_brand_sub">Tamarindo • Villarreal • Flamingo • Pinilla • Santa Cruz</span>
+          </div>
+        </div>
+        <div class="nav-actions">
+          <button class="pill" id="langBtn" type="button">ES / EN</button>
+          <a class="btn btn-ghost" id="callBtn" href="tel:+50684644941">Llamar</a>
+          <a class="btn btn-primary" id="waBtn" href="https://wa.me/50684644941?text=Hola%2C%20quisiera%20cotizar%20un%20port%C3%B3n%20o%20automatizaci%C3%B3n.%20Estoy%20en%20%5Bzona%5D.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noreferrer">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero" aria-label="Hero">
+        <div class="hero-grid">
+          <div>
+            <h1 class="h1" id="t_h1">Automatización y fabricación de portones residenciales</h1>
+            <p class="lead" id="t_lead">¿Portón dañado o quiere automatizar el acceso a su casa o condominio? Escríbanos por WhatsApp y le cotizamos sin compromiso.</p>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn btn-primary" id="waBtn2" href="https://wa.me/50684644941?text=Hola%2C%20quisiera%20cotizar%20un%20port%C3%B3n%20o%20automatizaci%C3%B3n.%20Estoy%20en%20%5Bzona%5D.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noreferrer">Cotizar por WhatsApp</a>
+              <a class="btn" id="t_servicesBtn" href="#servicios">Ver servicios</a>
+            </div>
+
+            <div class="kpi-row" style="margin-top:16px">
+              <div class="kpi"><div>⚙️</div><div><b id="t_k1">Automatización</b><small id="t_k1s">Motores, controles y accesorios</small></div></div>
+              <div class="kpi"><div>🧰</div><div><b id="t_k2">Mantenimiento</b><small id="t_k2s">Revisión y reparación</small></div></div>
+              <div class="kpi"><div>🏗️</div><div><b id="t_k3">Fabricación</b><small id="t_k3s">Portones a la medida</small></div></div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-img" role="img" aria-label="Portón instalado"></div>
+            <div class="hero-card-body">
+              <div class="contact-row">
+                <div class="contact">
+                  <div>
+                    <span id="t_phone">Teléfono / WhatsApp</span><br />
+                    <b>+506 8464 4941</b>
+                  </div>
+                  <a href="https://wa.me/50684644941?text=Hola%2C%20quisiera%20cotizar%20un%20port%C3%B3n%20o%20automatizaci%C3%B3n.%20Estoy%20en%20%5Bzona%5D.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noreferrer" id="t_write">Escribir</a>
+                </div>
+                <div class="contact">
+                  <div>
+                    <span>Email</span><br />
+                    <b style="font-size:13px">portonesysistemasguanacaste@gmail.com</b>
+                  </div>
+                  <a href="mailto:portonesysistemasguanacaste@gmail.com" id="t_email">Email</a>
+                </div>
+                <div class="contact">
+                  <div>
+                    <span id="t_hours">Horario</span><br />
+                    <b id="t_hours_val">Lunes a sábado 7:00–17:00 • Domingo cerrado</b>
+                  </div>
+                </div>
+              </div>
+              <p class="fine" id="t_note" style="margin:12px 0 0;color:var(--muted)">Atendemos principalmente proyectos residenciales y condominios en Guanacaste.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicios" aria-label="Servicios">
+        <div class="section-title">
+          <div>
+            <h2 id="t_s1">Servicios</h2>
+            <p class="sub" id="t_s1sub">Enfoque residencial (casas y condominios). Cotización rápida.</p>
+          </div>
+        </div>
+        <div class="grid3">
+          <div class="card">
+            <h3 id="t_srv1">Portones y automatización</h3>
+            <p id="t_srv1p">Instalación y automatización de accesos para mejorar seguridad y comodidad.</p>
+            <ul>
+              <li id="t_srv1l1">Motores y controles remotos</li>
+              <li id="t_srv1l2">Accesorios y repuestos</li>
+              <li id="t_srv1l3">Diagnóstico y reparación</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3 id="t_srv2">Fabricación a la medida</h3>
+            <p id="t_srv2p">Portones según necesidad del proyecto, con instalación completa.</p>
+            <ul>
+              <li id="t_srv2l1">Portones corredizos y abatibles</li>
+              <li id="t_srv2l2">Materiales y acabados según diseño</li>
+              <li id="t_srv2l3">Instalación y ajustes</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3 id="t_srv3">Cortinas arrollables</h3>
+            <p id="t_srv3p">Instalación y automatización de cortinas arrollables para viviendas y negocios.</p>
+            <ul>
+              <li id="t_srv3l1">Instalación</li>
+              <li id="t_srv3l2">Automatización</li>
+              <li id="t_srv3l3">Mantenimiento</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3 id="t_other">Otros servicios (según disponibilidad)</h3>
+          <p id="t_otherp">Además, podemos coordinar trabajos complementarios cuando el proyecto lo requiere.</p>
+          <ul>
+            <li id="t_other1">Instalación A/C</li>
+            <li id="t_other2">Remodelación de casas y negocios</li>
+          </ul>
+        </div>
+      </section>
+
+      <section aria-label="Zonas">
+        <div class="section-title">
+          <div>
+            <h2 id="t_areas">Zonas atendidas</h2>
+            <p class="sub" id="t_areassub">Guanacaste (prioridad Tamarindo y alrededores).</p>
+          </div>
+        </div>
+        <div class="areas">
+          <span class="tag">Tamarindo</span>
+          <span class="tag">Villarreal</span>
+          <span class="tag">Flamingo</span>
+          <span class="tag">Pinilla</span>
+          <span class="tag">Santa Cruz</span>
+        </div>
+        <p class="fine" id="t_areas_note" style="margin-top:10px">Si está en una zona cercana, escríbanos y le confirmamos cobertura.</p>
+      </section>
+
+      <section aria-label="Ejemplo">
+        <div class="section-title">
+          <div>
+            <h2 id="t_example">Ejemplo de proyecto</h2>
+            <p class="sub" id="t_examplesub">Referencia para que vea el tipo de solución que instalamos.</p>
+          </div>
+        </div>
+        <div class="grid3">
+          <div class="card" style="grid-column: span 2">
+            <h3 id="t_rib">Portón Corredizo Insulado RIBBERTH</h3>
+            <p id="t_ribp">Instalación total (materiales y mano de obra). Motor turbo 624 con respaldo de baterías, 2 botoneras de acceso + accesorios.</p>
+            <p class="fine" id="t_ribfine" style="margin-top:10px">Precio referencial: ₡2.250.000. Puede variar según medidas, requerimientos y ubicación.</p>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
+              <a class="btn btn-primary" href="https://wa.me/50684644941?text=Hola%2C%20me%20interesa%20un%20port%C3%B3n%20corredizo%20automatizado.%20Estoy%20en%20%5Bzona%5D.%20%C2%BFMe%20pueden%20cotizar%3F" target="_blank" rel="noreferrer" id="t_quote">Pedir cotización</a>
+              <a class="btn" href="#galeria" id="t_viewphotos">Ver fotos</a>
+            </div>
+          </div>
+          <div class="card">
+            <h3 id="t_owner">Atención directa</h3>
+            <p id="t_ownerp">Dacio Ramírez y equipo. Trabajo enfocado en accesos residenciales y condominios.</p>
+            <ul>
+              <li id="t_ownerl1">Cotización sin compromiso</li>
+              <li id="t_ownerl2">Mantenimiento y repuestos</li>
+              <li id="t_ownerl3">Garantía según el trabajo/equipo instalado</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="galeria" aria-label="Galería">
+        <div class="section-title">
+          <div>
+            <h2 id="t_gallery">Galería</h2>
+            <p class="sub" id="t_gallerysub">Fotos reales de trabajos.</p>
+          </div>
+        </div>
+        <div class="gallery">
+          <div class="ph" style="background-image:url('./images/486486144_9633678976698749_2994404747209803559_n.jpg')"></div>
+          <div class="ph" style="background-image:url('./images/495610765_9962103257189651_5807293955031726967_n.jpg')"></div>
+          <div class="ph" style="background-image:url('./images/496771179_9962103203856323_8180562684132371438_n.jpg')"></div>
+          <div class="ph" style="background-image:url('./images/497103816_9962103447189632_859984040740279287_n.jpg')"></div>
+          <div class="ph" style="background-image:url('./images/497438532_9962103293856314_4205574054799542216_n.jpg')"></div>
+          <div class="ph" style="background-image:url('./images/497546300_9962103400522970_8345042353478602057_n.jpg')"></div>
+          <div class="ph" style="background-image:url('./images/513069047_24094367436869996_1888283711557471751_n.jpg')"></div>
+          <div class="ph" style="background-image:url('./images/513481770_24094367676869972_523350008619732348_n.jpg')"></div>
+          <div class="ph" style="background-image:url('./images/513612766_24094367430203330_5171978245827270177_n.jpg')"></div>
+          <div class="ph" style="background-image:url('./images/514819314_24094367700203303_3078748397574621483_n.jpg')"></div>
+        </div>
+      </section>
+
+      <section aria-label="FAQ">
+        <div class="section-title">
+          <div>
+            <h2 id="t_faq">Preguntas frecuentes</h2>
+            <p class="sub" id="t_faqsub">Respuestas rápidas antes de cotizar.</p>
+          </div>
+        </div>
+        <div class="faq">
+          <details>
+            <summary id="t_q1">¿Pueden automatizar un portón existente?</summary>
+            <p id="t_a1">En muchos casos sí. Primero revisamos el tipo de portón, peso, estado de la estructura y el uso. Luego recomendamos el motor y accesorios adecuados.</p>
+          </details>
+          <details>
+            <summary id="t_q2">¿Hacen mantenimiento y reparación?</summary>
+            <p id="t_a2">Sí. Damos mantenimiento preventivo y correctivo, y también venta/instalación de repuestos según el caso.</p>
+          </details>
+          <details>
+            <summary id="t_q3">¿Trabajan en condominios?</summary>
+            <p id="t_a3">Sí. Coordinamos visitas y requisitos de acceso para condominios en Tamarindo y alrededores.</p>
+          </details>
+          <details>
+            <summary id="t_q4">¿Qué información necesitan para cotizar?</summary>
+            <p id="t_a4">Zona, tipo de portón (corredizo/abatible), si ya existe o es nuevo, medidas aproximadas y fotos o video del acceso. Con eso avanzamos más rápido.</p>
+          </details>
+        </div>
+      </section>
+
+      <section aria-label="CTA">
+        <div class="cta">
+          <div>
+            <h3 id="t_cta">¿Listo para cotizar?</h3>
+            <p id="t_ctasub">Escríbanos por WhatsApp y coordinamos la visita o la cotización con fotos/video.</p>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end">
+            <a class="btn" href="tel:+50684644941" id="t_call">Llamar</a>
+            <a class="btn btn-primary" href="https://wa.me/50684644941?text=Hola%2C%20quisiera%20cotizar%20un%20port%C3%B3n%20o%20automatizaci%C3%B3n.%20Estoy%20en%20%5Bzona%5D.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noreferrer" id="t_whats">WhatsApp</a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="fine">
+          <p style="margin:0 0 8px"><b>Portones y Sistemas Automatizados Guanacaste</b> — Dacio Ramírez</p>
+          <p style="margin:0 0 8px">Contacto: <a href="https://wa.me/50684644941" target="_blank" rel="noreferrer">+506 8464 4941</a> • <a href="mailto:portonesysistemasguanacaste@gmail.com">portonesysistemasguanacaste@gmail.com</a></p>
+          <p style="margin:0">Vista previa de sitio web (demo). Contenido sujeto a confirmación por el negocio.</p>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    const i18n = {
+      es: {
+        brandSub: 'Tamarindo • Villarreal • Flamingo • Pinilla • Santa Cruz',
+        h1: 'Automatización y fabricación de portones residenciales',
+        lead: '¿Portón dañado o quiere automatizar el acceso a su casa o condominio? Escríbanos por WhatsApp y le cotizamos sin compromiso.',
+        servicesBtn: 'Ver servicios',
+        k1:'Automatización', k1s:'Motores, controles y accesorios',
+        k2:'Mantenimiento', k2s:'Revisión y reparación',
+        k3:'Fabricación', k3s:'Portones a la medida',
+        phone:'Teléfono / WhatsApp',
+        hours:'Horario', hoursVal:'Lunes a sábado 7:00–17:00 • Domingo cerrado',
+        note:'Atendemos principalmente proyectos residenciales y condominios en Guanacaste.',
+        s1:'Servicios', s1sub:'Enfoque residencial (casas y condominios). Cotización rápida.',
+        srv1:'Portones y automatización', srv1p:'Instalación y automatización de accesos para mejorar seguridad y comodidad.',
+        srv1l1:'Motores y controles remotos', srv1l2:'Accesorios y repuestos', srv1l3:'Diagnóstico y reparación',
+        srv2:'Fabricación a la medida', srv2p:'Portones según necesidad del proyecto, con instalación completa.',
+        srv2l1:'Portones corredizos y abatibles', srv2l2:'Materiales y acabados según diseño', srv2l3:'Instalación y ajustes',
+        srv3:'Cortinas arrollables', srv3p:'Instalación y automatización de cortinas arrollables para viviendas y negocios.',
+        srv3l1:'Instalación', srv3l2:'Automatización', srv3l3:'Mantenimiento',
+        other:'Otros servicios (según disponibilidad)', otherp:'Además, podemos coordinar trabajos complementarios cuando el proyecto lo requiere.',
+        other1:'Instalación A/C', other2:'Remodelación de casas y negocios',
+        areas:'Zonas atendidas', areassub:'Guanacaste (prioridad Tamarindo y alrededores).', areasNote:'Si está en una zona cercana, escríbanos y le confirmamos cobertura.',
+        example:'Ejemplo de proyecto', examplesub:'Referencia para que vea el tipo de solución que instalamos.',
+        rib:'Portón Corredizo Insulado RIBBERTH',
+        ribp:'Instalación total (materiales y mano de obra). Motor turbo 624 con respaldo de baterías, 2 botoneras de acceso + accesorios.',
+        ribfine:'Precio referencial: ₡2.250.000. Puede variar según medidas, requerimientos y ubicación.',
+        quote:'Pedir cotización', viewphotos:'Ver fotos',
+        owner:'Atención directa', ownerp:'Dacio Ramírez y equipo. Trabajo enfocado en accesos residenciales y condominios.',
+        ownerl1:'Cotización sin compromiso', ownerl2:'Mantenimiento y repuestos', ownerl3:'Garantía según el trabajo/equipo instalado',
+        gallery:'Galería', gallerysub:'Fotos reales de trabajos.',
+        faq:'Preguntas frecuentes', faqsub:'Respuestas rápidas antes de cotizar.',
+        q1:'¿Pueden automatizar un portón existente?', a1:'En muchos casos sí. Primero revisamos el tipo de portón, peso, estado de la estructura y el uso. Luego recomendamos el motor y accesorios adecuados.',
+        q2:'¿Hacen mantenimiento y reparación?', a2:'Sí. Damos mantenimiento preventivo y correctivo, y también venta/instalación de repuestos según el caso.',
+        q3:'¿Trabajan en condominios?', a3:'Sí. Coordinamos visitas y requisitos de acceso para condominios en Tamarindo y alrededores.',
+        q4:'¿Qué información necesitan para cotizar?', a4:'Zona, tipo de portón (corredizo/abatible), si ya existe o es nuevo, medidas aproximadas y fotos o video del acceso. Con eso avanzamos más rápido.',
+        cta:'¿Listo para cotizar?', ctasub:'Escríbanos por WhatsApp y coordinamos la visita o la cotización con fotos/video.',
+        call:'Llamar', whats:'WhatsApp', write:'Escribir'
+      },
+      en: {
+        brandSub: 'Tamarindo • Villarreal • Flamingo • Pinilla • Santa Cruz',
+        h1: 'Residential gate automation & fabrication',
+        lead: 'Gate not working or want to automate access to your home or condo? Message us on WhatsApp for a fast, no-obligation quote.',
+        servicesBtn: 'See services',
+        k1:'Automation', k1s:'Motors, remotes & accessories',
+        k2:'Maintenance', k2s:'Inspection & repairs',
+        k3:'Fabrication', k3s:'Custom-made gates',
+        phone:'Phone / WhatsApp',
+        hours:'Hours', hoursVal:'Mon–Sat 7:00am–5:00pm • Sun closed',
+        note:'We mainly work on residential projects and condominiums in Guanacaste.',
+        s1:'Services', s1sub:'Residential focus (homes & condos). Fast quoting.',
+        srv1:'Gates & automation', srv1p:'Installation and automation to improve security and convenience.',
+        srv1l1:'Motors and remote controls', srv1l2:'Accessories and spare parts', srv1l3:'Diagnostics and repairs',
+        srv2:'Custom fabrication', srv2p:'Gates built for your project, including full installation.',
+        srv2l1:'Sliding and swing gates', srv2l2:'Materials & finishes as needed', srv2l3:'Installation & adjustments',
+        srv3:'Rolling shutters', srv3p:'Installation and automation of rolling shutters for homes and businesses.',
+        srv3l1:'Installation', srv3l2:'Automation', srv3l3:'Maintenance',
+        other:'Other services (upon availability)', otherp:'We can also coordinate complementary work when your project requires it.',
+        other1:'A/C installation', other2:'Home & business remodeling',
+        areas:'Service areas', areassub:'Guanacaste (Tamarindo area priority).', areasNote:'If you are nearby, message us and we’ll confirm coverage.',
+        example:'Project example', examplesub:'A reference so you can see the type of solution we install.',
+        rib:'Insulated Sliding Gate (RIBBERTH)',
+        ribp:'Turnkey installation (materials + labor). Turbo 624 motor with battery backup, 2 access push-buttons + accessories.',
+        ribfine:'Reference price: ₡2,250,000. Final price may vary by size, requirements and location.',
+        quote:'Request a quote', viewphotos:'See photos',
+        owner:'Direct attention', ownerp:'Dacio Ramírez and team. Focused on residential access and condominiums.',
+        ownerl1:'No-obligation quotes', ownerl2:'Maintenance & spare parts', ownerl3:'Warranty depends on installed work/equipment',
+        gallery:'Gallery', gallerysub:'Real project photos.',
+        faq:'FAQ', faqsub:'Quick answers before you request a quote.',
+        q1:'Can you automate an existing gate?', a1:'In many cases, yes. We first check the gate type, weight, structure condition and usage, then recommend the right motor and accessories.',
+        q2:'Do you do maintenance and repairs?', a2:'Yes. Preventive and corrective maintenance, plus spare parts depending on the case.',
+        q3:'Do you work with condominiums?', a3:'Yes. We coordinate visits and access requirements for condominiums in the Tamarindo area.',
+        q4:'What do you need to quote?', a4:'Area, gate type (sliding/swing), whether it’s existing or new, approximate measurements, and photos or a short video. That helps us move faster.',
+        cta:'Ready to get a quote?', ctasub:'Message us on WhatsApp and we’ll coordinate a visit or quote via photos/video.',
+        call:'Call', whats:'WhatsApp', write:'Message'
+      }
+    };
+
+    let lang = 'es';
+    const ids = {
+      t_brand_sub:'brandSub', t_h1:'h1', t_lead:'lead', t_servicesBtn:'servicesBtn',
+      t_k1:'k1', t_k1s:'k1s', t_k2:'k2', t_k2s:'k2s', t_k3:'k3', t_k3s:'k3s',
+      t_phone:'phone', t_hours:'hours', t_hours_val:'hoursVal', t_note:'note',
+      t_s1:'s1', t_s1sub:'s1sub',
+      t_srv1:'srv1', t_srv1p:'srv1p', t_srv1l1:'srv1l1', t_srv1l2:'srv1l2', t_srv1l3:'srv1l3',
+      t_srv2:'srv2', t_srv2p:'srv2p', t_srv2l1:'srv2l1', t_srv2l2:'srv2l2', t_srv2l3:'srv2l3',
+      t_srv3:'srv3', t_srv3p:'srv3p', t_srv3l1:'srv3l1', t_srv3l2:'srv3l2', t_srv3l3:'srv3l3',
+      t_other:'other', t_otherp:'otherp', t_other1:'other1', t_other2:'other2',
+      t_areas:'areas', t_areassub:'areassub', t_areas_note:'areasNote',
+      t_example:'example', t_examplesub:'examplesub',
+      t_rib:'rib', t_ribp:'ribp', t_ribfine:'ribfine', t_quote:'quote', t_viewphotos:'viewphotos',
+      t_owner:'owner', t_ownerp:'ownerp', t_ownerl1:'ownerl1', t_ownerl2:'ownerl2', t_ownerl3:'ownerl3',
+      t_gallery:'gallery', t_gallerysub:'gallerysub',
+      t_faq:'faq', t_faqsub:'faqsub',
+      t_q1:'q1', t_a1:'a1', t_q2:'q2', t_a2:'a2', t_q3:'q3', t_a3:'a3', t_q4:'q4', t_a4:'a4',
+      t_cta:'cta', t_ctasub:'ctasub', t_call:'call', t_whats:'whats', t_write:'write'
+    };
+
+    function apply(){
+      const d = i18n[lang];
+      for (const [id,key] of Object.entries(ids)){
+        const el = document.getElementById(id);
+        if (el) el.textContent = d[key];
+      }
+      document.documentElement.lang = lang;
+      document.getElementById('callBtn').textContent = i18n[lang].call;
+    }
+
+    document.getElementById('langBtn').addEventListener('click', ()=>{
+      lang = (lang === 'es') ? 'en' : 'es';
+      apply();
+    });
+
+    apply();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Portones y Sistemas Automatizados Guanacaste",
+    "telephone": "+50684644941",
+    "email": "portonesysistemasguanacaste@gmail.com",
+    "areaServed": ["Tamarindo", "Villarreal", "Flamingo", "Pinilla", "Santa Cruz", "Guanacaste"],
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"07:00","closes":"17:00"}
+    ]
+  }
+  </script>
+</body>
+</html>
