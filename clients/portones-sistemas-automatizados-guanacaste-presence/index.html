@@ -64,7 +64,7 @@
     .mini b{font-size:14px}
     .mini span{display:block;color:var(--muted);font-size:12px;margin-bottom:3px}
 
-    section{padding:24px 0}
+    section{padding:24px 0; scroll-margin-top: 92px}
     .section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:12px}
     h2{margin:0;font-size:22px;letter-spacing:-.25px}
     .sub{margin:0;color:var(--muted);font-size:13px}
@@ -108,11 +108,28 @@
       .h1{font-size:34px}
       .form{grid-template-columns:1fr}
 
-      /* Mobile: avoid cutting off business name in sticky header */
-      .nav{align-items:flex-start}
+      /* Mobile header layout: brand on top, actions below (horizontal) */
+      .nav{flex-direction:column !important; align-items:stretch; gap:10px}
       .logo{align-items:flex-start}
       .brand strong{white-space:normal; line-height:1.15}
       .brand span{white-space:normal}
+
+      /* Force 2-row header: actions row full-width */
+      .actions{width:100%; display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:8px; justify-items:stretch}
+      .actions .pill, .actions a{width:100%; justify-content:center; padding:10px 10px; border-radius:12px}
+
+      /* Mobile: prevent contact rows from cutting off content/buttons */
+      .mini .row{flex-direction:column; align-items:flex-start}
+      .mini span{display:block}
+      .mini b{white-space:normal; overflow-wrap:anywhere}
+      .mini .row a, .mini .row .btn{align-self:stretch; text-align:center}
+
+      /* Mobile: keep hero value props centered, but keep content sections left-aligned */
+      .hero .grid3{justify-items:stretch}
+      .hero .grid3 .card{text-align:center}
+
+      /* Solutions / content cards: left-align text for readability */
+      #soluciones .card{ text-align:left }
     }
   </style>
 </head>
@@ -429,9 +446,9 @@
         h1:'Accesos automatizados para casas y condominios',
         lead:'Instalamos, fabricamos y damos mantenimiento a portones residenciales en Tamarindo y zonas cercanas. ES/EN, cotización rápida por WhatsApp.',
         cta1:'Cotizar por WhatsApp', cta2:'Ver soluciones',
-        k1:'Seguridad', k1p:'Automatización confiable para control de acceso residencial.',
-        k2:'Respaldo', k2p:'Repuestos, mantenimiento y soporte según el caso.',
-        k3:'Presentación', k3p:'Portones a la medida, listos para ambiente costero.',
+        k1:'🛡️ Seguridad', k1p:'Automatización confiable para control de acceso residencial.',
+        k2:'🧰 Respaldo', k2p:'Repuestos, mantenimiento y soporte según el caso.',
+        k3:'🏗️ Presentación', k3p:'Portones a la medida, listos para ambiente costero.',
         phone:'Teléfono / WhatsApp', hours:'Horario', hoursVal:'Lunes a sábado 7:00–17:00 • Domingo cerrado',
         owner:'Atención', ownerVal:'Dacio Ramírez y equipo',
         note:'Enfoque principal: residencias y condominios (control de acceso).',
@@ -470,9 +487,9 @@
         h1:'Automated access for homes & condominiums',
         lead:'We install, fabricate and maintain residential gates in Tamarindo and nearby areas. ES/EN. Fast quoting via WhatsApp.',
         cta1:'Get a WhatsApp quote', cta2:'See solutions',
-        k1:'Security', k1p:'Reliable automation for residential access control.',
-        k2:'Support', k2p:'Spare parts, maintenance and support depending on the case.',
-        k3:'Finish', k3p:'Custom-built gates, ready for coastal conditions.',
+        k1:'🛡️ Security', k1p:'Reliable automation for residential access control.',
+        k2:'🧰 Support', k2p:'Spare parts, maintenance and support depending on the case.',
+        k3:'🏗️ Finish', k3p:'Custom-built gates, ready for coastal conditions.',
         phone:'Phone / WhatsApp', hours:'Hours', hoursVal:'Mon–Sat 7:00am–5:00pm • Sun closed',
         owner:'Contact', ownerVal:'Dacio Ramírez and team',
         note:'Main focus: homes and condominiums (access control).',
